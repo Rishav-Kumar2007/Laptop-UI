@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laptop UI</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0%;
+        padding: 0%;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+      header {
+        display: flex;
+        margin: auto;
+        width: 80%;
+        height: 10vh;
+        align-items: center;
+      }
+      .logo-container,
+      .nav-links,
+      .cart {
+        display: flex;
+      }
+      .logo-container {
+        flex: 1;
+      }
+      .logo {
+        font-weight: 400;
+        margin: 5px;
+      }
+      nav {
+        flex: 2;
+      }
+      .nav-links {
+        justify-content: space-around;
+        list-style: none;
+      }
+      .nav-link {
+        text-decoration: none;
+        font-size: 18px;
+        color: #5f5f79;
+        justify-content: space-around;
+      }
+      .cart {
+        flex: 1;
+        justify-content: flex-end;
+      }
+      h4 {
+        color: grey;
+      }
+      .nav-link:hover {
+        color: blue;
+      }
+      .presentation {
+        display: flex;
+        width: 90%;
+        margin: auto;
+        min-height: 80vh;
+        align-items: center;
+      }
+      .introduction {
+        flex: 1;
+      }
+      .cover {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        height: 60vh;
+      }
+      .cover img {
+        height: 100%;
+        animation: drop 1.5s ease;
+        filter: drop-shadow(
+          0px 12px 10px black
+        ); /*Right-bottom-full image-color
+        this above filter is to add shadow to main image even if its white box
+        */
+      }
+      .intro-text h1 {
+        font-size: 44px;
+        font-weight: 500;
+        background: linear-gradient(to right, #494964, #6f6f89);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .intro-text p {
+        margin-top: 5px;
+        font-size: 22px;
+        color: #585772;
+      }
+      .cta {
+        padding: 50px 0px 0px 0px; /* ! top-right-bottom-left */
+      }
+      .cta-select {
+        border: 2px solid #c36cbb;
+        color: #c36cbb;
+        width: 150px;
+        height: 30px;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 16px;
+        padding: 3px 20px 3px 20px;
+      }
+      .cta-add {
+        background: #c36cbb;
+        color: #fff;
+        width: 150px;
+        height: 50px;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 16px;
+        padding: 5px 10px 5px 10px;
+        margin: 30px 0px 0px 30px;
+      }
+      .big-circle {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        z-index: -1;
+        height: 86%;
+        opacity: 0.5;
+      }
+      .mid-circle {
+        position: absolute;
+        top: 30%;
+        right: 30%;
+        z-index: -1;
+        height: 60%;
+        opacity: 0.5;
+      }
+      .small-circle {
+        position: absolute;
+        bottom: 0%;
+        left: 20%;
+        z-index: -1;
+        height: 40%;
+      }
+      .laptop-select {
+        width: 15%;
+        display: flex;
+        justify-content: space-around;
+        position: absolute;
+        right: 20%;
+      }
+
+      @keyframes drop {
+        0% {
+          opacity: 0;
+          transform: translateY(-80px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0px);
+        }
+      }
+
+      @media screen and (max-width: 750px) {
+        .presentation {
+          flex-direction: column;
+        }
+        .introduction {
+          margin: 3vh;
+          text-align: center;
+        }
+        .intro-text h1 {
+          font-size: 25px;
+        }
+        .intro-text p {
+          font-size: 15px;
+        }
+        .cta {
+          padding: 20px 0px 0px 0px;
+        }
+        .laptop-select {
+          bottom: 5%;
+          right: 50%;
+          width: 50%;
+          transform: translate(50%, 5%);
+        }
+        .cover img {
+          height: 90%;
+        }
+        .small-circle,
+        .mid-circle,
+        .big-circle {
+          opacity: 0.5;
+        }
+        h4 {
+          font-size: 15px;
+        }
+        .nav-link {
+          font-size: 15px;
+        }
+        .logo-container img {
+          float: left;
+          margin: 0px 2px 0px 0px;
+          width: 30px;
+        }
+        .nav-links {
+          margin-left: 0px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <img src="img/logo.svg" alt="logo" />
+        <h4 class="logo">
+          <strong> Three Dots </strong>
+        </h4>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a class="nav-link" href="#">Specs</a></li>
+          <li><a class="nav-link" href="#">Products</a></li>
+          <li><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="cart">
+        <img src="img/cart.svg" alt="cart" />
+      </div>
+    </header>
+
+    <main>
+      <section class="presentation">
+        <div class="introduction">
+          <div class="intro-text">
+            <h1>Laptop for the future</h1>
+            <p>
+              The newest 16 inch bezeless, full fun display offering 8k
+              resolution with adaptive touch screen and high refresh-rate.
+            </p>
+          </div>
+          <div class="cta">
+            <a href="#" class="cta-select">16 inch</a>
+            <a href="#" class="cta-add">Add to cart</a>
+          </div>
+        </div>
+        <div class="cover">
+          <img src="img/matebook.png" alt="laptop" />
+        </div>
+      </section>
+      <div class="laptop-select">
+        <img src="./img/arrow-left.svg" alt="" />
+        <img src="./img/dot.svg" alt="" />
+        <img src="./img/dot-full.svg" alt="" />
+        <img src="img/arrow-right.svg" alt="" />
+      </div>
+      <img class="big-circle" src="img/big-eclipse.svg" alt="" />
+      <img class="mid-circle" src="img/mid-eclipse.svg" alt="" />
+      <img class="small-circle" src="img/small-eclipse.svg" alt="" />
+    </main>
+  </body>
+</html>
